@@ -1,0 +1,11 @@
+<!doctype html>
+<title>Password Strength Checker</title>
+{% if count > 10000%}
+  <h1>Password is very weak. It has been compromised {{ count }} times.</h1>
+{% elif 1000 <= count <= 10000 %}
+  <h1>Password is very weak. It has been compromised {{ count }} times.</h1>
+{% elif 1 <= count <= 1000 %}
+  <h1>Password is weak. It has been compromised {{ count }} times.</h1>
+{% else %}
+  <h1>Password is ok.</h1>
+{% endif %}

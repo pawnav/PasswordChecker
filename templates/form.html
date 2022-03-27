@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal finance</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <h1>Password Strenght Checker</h1>
+    <form method="POST">
+      <div class="form__fieldset">
+        <label for="date" class="form__label">Date:</label>
+        <input type="date" name="date" id="date" class="form__input" />
+      </div>
+
+      <div class="form__fieldset">
+        <label for="pass" class="form__label">Password:</label>
+        <input type="text" name="pass" id="pass" class="form__input" />
+      </div>
+
+      <div class="form__fieldset">
+        <input
+          class="form__submit form__input"
+          type="submit"
+          value="Check strength"
+        />
+      </div>
+    </form>
+  </body>
+</html>
