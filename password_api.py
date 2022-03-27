@@ -11,12 +11,8 @@ class PasswordChecker(object):
     def pwnd_api_check(self, password):
         sha1_password = hashlib.sha1(
             password.encode('utf-8')).hexdigest().upper()
-        print(f"sha1 pass: {sha1_password}")
         first5_char, tail = sha1_password[:5], sha1_password[5:]
-        print(f"first 5: {first5_char}")
-        print(f"rest: {tail}")
         response = self.requests_api_data(first5_char)
-        print(f"response: {response}")
         return self.get_password_leaks_count(response, tail)
 
     def requests_api_data(self, query_char):
@@ -30,8 +26,6 @@ class PasswordChecker(object):
         return out
 
     def get_password_leaks_count(self, hashes, hash_to_check):
-        print(f"hashes: {hashes.text}")
-        print(f"hashes to check: {hash_to_check}")
         if hashes is not None:
             hashes = (line.split(':') for line in hashes.text.splitlines())
             for h, count in hashes:
