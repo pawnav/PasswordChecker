@@ -21,10 +21,4 @@ def index():
     return render_template('form.html')
 
 
-@app.route('/hello/')
-@app.route('/hello/<name>')
-def hello(name=None):
-    return render_template('checker.html', name=name)
-
-
 
